@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Threading Library
 By Brian Humphreys
 
@@ -28,3 +29,6 @@ The biggest trouble I had with this project was figuring out the proper size spe
 The main issue here is my linking.  This is a large project and I felt it was better practice to spread the code across multiple files.  The problem is that now I was not able to succesfully make a single threads.o file.  My makefile succesfully compiles for my code however and you are able to run the test by dropping your test code in here and running `make` and then `sample_grader` just as usual.  i hop this is not an issue.  Sorry for any inconvinience this causes.
 
 Learned a lot.  Thanks to Ryan and Sean for helping out a lot, you guys are the GOATS.
+=======
+# Threading_Semaphores
+>>>>>>> 48bbe13d95a15eedbde44e609a5eccd93ff961ca
