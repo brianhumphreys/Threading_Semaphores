@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 Threading Library
 By Brian Humphreys
 
-This file is a simple threading library which can be interfaced with by three simple functions: `pthread_create()`, `pthread_self()` and `pthread_exit()`. 
+This file is a simple threading library which can be interfaced in the same way as the `pthread` library and the `sem_t` library.  The difference here is that both the thread pool and the semaphore pool are both implemented using linked lists and are much more dynamic than the common implementation of fixed sized arrays.
 
-Each thread is maintained by a Thread (Fiber) Control Block which allows aacess to the threads stack, ID, context and start_routine.  The library is preemptive and switches between threads ever 50ms.  When switching, the signal handler will save the current context and then call on the scheduler to start the next waiting thread by a round robin approach.
+Each thread is maintained by a Thread (Fiber) Control Block which allows access to the threads stack, ID, context and start_routine.  The library is preemptive and switches between threads ever 50ms.  When switching, the signal handler will save the current context and then call on the scheduler to start the next waiting thread by a round robin approach.
 
 `pthread_create()`:  In this function, I set the context of the new thread and add it to the FCB (fiber) struct list.  
 
@@ -22,13 +21,6 @@ Each thread is maintained by a Thread (Fiber) Control Block which allows aacess 
 
 `sem_post()`:  called when exiting a critical section of code.  this will increment the calling semaphore's value and unblock the next waiting thread if there is one.
 
-## PA2
-The biggest trouble I had with this project was figuring out the proper size specification.  I divided the stack size by eight while others advised to do other things like dividing by 4 or not dividing at all and subtracting a couple bytes.  Some clarification on this would be great for the next project.  Also, I think I am going to change to a doubly linked list for a couple of reasons.  1) a linked list would just be easier to reference than a fix sized array and it can create as many threads as it wants.  2) doubly linked because some people advised that after the main thread, you should add new threads in reverse order.  
 
-## PA3
-The main issue here is my linking.  This is a large project and I felt it was better practice to spread the code across multiple files.  The problem is that now I was not able to succesfully make a single threads.o file.  My makefile succesfully compiles for my code however and you are able to run the test by dropping your test code in here and running `make` and then `sample_grader` just as usual.  i hop this is not an issue.  Sorry for any inconvinience this causes.
 
-Learned a lot.  Thanks to Ryan and Sean for helping out a lot, you guys are the GOATS.
-=======
 # Threading_Semaphores
->>>>>>> 48bbe13d95a15eedbde44e609a5eccd93ff961ca
